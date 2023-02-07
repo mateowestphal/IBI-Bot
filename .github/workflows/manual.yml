@@ -1,14 +1,17 @@
      name: Run Python Script
-      uses: jannekem/run-python-script-action@v1.6
-     run-name: Automatic
-     jobs:
-      my_job:
-       name: deploy to staging
-       runs-on: ubuntu-18.04 
-     on:
-      schedule:
-      - cron: "0 2 * * 5"
-      
+on:
+  schedule:
+    - cron: '30 5 * * 1,3'
+    
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Not on Monday or Wednesday
+        if: github.event.schedule != '30 5 * * 1,3'
+        run: echo "This step will be skipped on Monday and Wednesday"
+      - name: Every time
+        run: echo "This step will always run"
 
   
 
