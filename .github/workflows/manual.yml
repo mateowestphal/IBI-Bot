@@ -1,15 +1,3 @@
-     name: Run Python Script
-on:
-schedule:
-  - cron: "0 2 * * 6"
-    
-jobs:
-  test_schedule:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Every time
-        run: echo "This step will always run"
-        
   name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
