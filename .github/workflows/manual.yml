@@ -1,3 +1,14 @@
+     name: Run Python Script
+      uses: jannekem/run-python-script-action@v1.6
+     run-name: Automatic
+     jobs:
+      my_job:
+       name: deploy to staging
+       runs-on: ubuntu-18.04 
      on:
       schedule:
       - cron: "0 2 * * 5"
+      
+
+  
+
